@@ -1,0 +1,197 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+   
+    font-family: sans-serif;
+    /* background-image: url("bg9.jpeg"); */
+    /* background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; */
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bgx{
+    background-image: url("../images/RR.jpg"); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+}
+
+
+.bga{
+    background-image: url("../images/pink.webp"); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.bgy{
+    background-image: url("../images/forest_of_pixels_by_bunnsp_ddxkac6-pre.jpg"); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+
+.bgz{
+    background-image: url("../images/bg10.jpeg"); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; }
+
+.fontsiz{
+    font-size: 50px;
+  }
+  
+  .dropimg{
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+  }
+  .nav-link{
+    color: rgb(31, 31, 31) !important;
+  }
+
+  .cardx{
+    border-radius: 10px;
+    padding: 0px 40px;
+    color: #fff;
+    background: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    background-image: url('../images/grass.png');
+    background-repeat: no-repeat;
+    background-position: bottom center; 
+    background-size: 470px; 
+}
+  
+
+.pixelify-sans{
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  
+  .pixelify-sans-head{
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 80px;
+    font-style: normal;
+   
+  }
+  
+  
+@media (max-width: 943px){
+    .sizeCher{
+        width: 350px;
+    }
+   
+    .sidebar{
+        background-color: rgba(30, 22, 22, 0.218) !important;
+        backdrop-filter: blur(10px);
+    }
+
+    .fontsiz{
+        font-size: 25px;
+      }
+      
+
+      .pixelify-sans-head{
+        font-size: 40px;
+      }
+
+      .nav-link{
+        color: white !important;
+      }
+
+
+      .sidebar{
+        background-color: rgba(30, 22, 22, 0.218) !important;
+        backdrop-filter: blur(10px);
+        color:white;
+    }
+}
+
+.noto-sans-jp {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  color: black;
+}
+
+
+
+
+
+
+
+
+.amaranth-regular {
+  font-family: "Amaranth", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.amaranth-bold {
+  font-family: "Amaranth", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.amaranth-regular-italic {
+  font-family: "Amaranth", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.amaranth-bold-italic {
+  font-family: "Amaranth", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+   
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .carousel-inner img {
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .carousel {
+    margin-top: 0; /* Adjust according to navbar height */
+  }

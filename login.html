@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js" integrity="sha512-KFHXdr2oObHKI9w4Hv1XPKc898mE4kgYx58oqsc/JqqdLMDI4YjOLzom+EMlW8HFUd0QfjfAvxSL6sEq/a42fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+ .x{
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+
+ }
+
+
+ button:disabled {
+    background-color: red;
+    cursor: not-allowed;
+}
+
+#errorMessage {
+    /* color: red; */
+    text-align: center;
+}   
+    </style>
+</head>
+<body>
+    <div class="login">
+        <form id="myForm">
+       <div class="row ">
+       
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <img src="images/logotext.png" alt="" width="290">
+        </div>
+
+       </div>   
+       
+        <div class="input-box">
+            <input type="text" placeholder="Username" id="username" name="username">
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="password" placeholder="Password" id="password" name="password">
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+
+        <div class="forgot">
+            <label><input type="checkbox">Remember me</label>
+            <a href="">Forgot password</a>
+        </div>
+
+       
+            <button type="submit" class="studioBtn"  id="submitBtn">Login</button>
+ 
+          
+            <p id="errorMessage"></p>
+
+        <div class="row ">
+           
+            <!-- <div class="col-12 d-flex justify-content-center align-items-end">
+                <img src="grasstoto.gif" alt="" width="300">
+            </div> -->
+        </div>
+        <div class="register">
+            <p>Don't have an account? <a href="Register.html">Register</a></p>
+        </div>
+        </form>
+
+      
+    
+    </div>
+   
+    <script>
+
+
+
+
+$(document).ready(function(){
+
+$("#myForm").validate({
+
+    rules:{
+
+        username:{
+            required:true,
+            minlength: 5,
+            maxlength:9
+        },
+     
+        password:{
+            required:true,
+            minlength: 8,
+           
+        }
+
+    },
+
+    messages:{
+
+        username:{
+                required:"Ito ay dapat may laman MALIIII ITOOOOOO:(",
+                minlength: "Dapat 6 characters",
+                maxlength:"Bawal lumampas sa 9 characters"
+            }
+           
+
+        }
+
+
+
+
+});
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const maxAttempts = 5;
+        let attempts = 0;
+
+
+
+
+
+
+
+// username and password for validation
+const validUsername = "emmanuel";
+const validPassword = "PAssword123";
+
+
+
+// Function to check if the password has at least 2 capital letters
+function hasTwoCapitalLetters(password) {
+    let capitalCount = 0;
+    
+    // Loop through each character in the password
+    for (let i = 0; i < password.length; i++) {
+        if (password[i] >= 'A' && password[i] <= 'Z') {
+            capitalCount++;
+        }
+        
+        // If we already have 2 capital letters, we can stop
+        if (capitalCount >= 2) {
+            return true;
+        }
+    }
+    
+    // Return false if fewer than 2 capital letters were found
+    return false;
+}
+
+
+
+
+document.getElementById("submitBtn").onclick = function(){
+   
+    event.preventDefault();
+ 
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("errorMessage");
+    const submitBtn = document.getElementById("submitBtn");
+
+    if (username.length < 8) {
+        errorMessage.textContent = "Username must be at least 8 characters long.";
+        return;
+    }
+
+
+    if (!hasTwoCapitalLetters(password)) {
+        errorMessage.textContent = "Password must contain at least 2 capital letters.";
+        return;
+    }
+
+
+    // Check if username and password match
+    if (username === validUsername && password === validPassword) {
+        errorMessage.textContent = "";
+        window.location.href = "index.html";  // Redirect to next page
+    } else {
+        attempts++;
+        errorMessage.textContent = `Invalid credentials. Attempts remaining: ${maxAttempts - attempts}`;
+        
+        // Disable the submit button after 5 failed attempts
+        if (attempts >= maxAttempts) {
+            submitBtn.disabled = true;
+            errorMessage.textContent = "Maximum attempts reached. Login disabled.";
+        }
+    }
+};
+
+
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key))) {
+    e.preventDefault(); 
+  }
+});
+document.addEventListener('contextmenu', e => e.preventDefault()); 
+setInterval(() => { debugger; }, 1000); 
+
+
+    </script>
+</body>
+</html>
